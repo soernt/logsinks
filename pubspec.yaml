@@ -1,6 +1,6 @@
 name: logsinks
 description: Provides ouput targets for log messages. This package is meant to be uses with the dart logging package.
-version: 0.1.2
+version: 0.1.3
 author: Sörnt Poppe <soernt.poppe@nordlichtsoftware.de>
 homepage: https://github.com/soernt/logsinks
 
