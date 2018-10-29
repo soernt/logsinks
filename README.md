@@ -28,7 +28,7 @@ dependencies:
 ```dart
 // Import the packages.
 import 'package:logging/logging.dart';
-import 'package:logsinks/console_log_sink.dart';
+import 'package:logsinks/log_sinks.dart';
 
 void main() {
   // Configer the logger

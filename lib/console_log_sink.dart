@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:colorize/colorize.dart';
 import 'package:logging/logging.dart';
 
-import 'log_sink.dart';
+import 'log_message_sink.dart';
 
 /// Outputs log messages to the console.
 class ConsoleLogSink implements LogMessageSink {
