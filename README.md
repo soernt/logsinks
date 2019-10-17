@@ -31,10 +31,10 @@ import 'package:logging/logging.dart';
 import 'package:logsinks/log_sinks.dart';
 
 void main() {
-  // Configer the logger
+  // Configure the logger
   Logger.root.level = Level.INFO;
 
-  // Configer a log sink to output the logger messages to the console.
+  // Configure log sink to output the logger messages to the console.
   final messageSink = ConsoleLogSink();
   messageSink.attachToLogger(Logger.root);
 

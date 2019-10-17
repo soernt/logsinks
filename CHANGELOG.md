@@ -1,4 +1,8 @@
-## [0.1.2]
+## [0.1.4]
+
+* Only Android logs colorized messages.
+
+## [0.1.3]
 
 * Fix code files layout.
 

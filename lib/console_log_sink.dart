@@ -1,12 +1,13 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:colorize/colorize.dart';
 import 'package:logging/logging.dart';
 
-import 'log_message_sink.dart';
+import 'ilog_message_sink.dart';
 
 /// Outputs log messages to the console.
-class ConsoleLogSink implements LogMessageSink {
+class ConsoleLogSink implements ILogMessageSink {
   // Properties
 
   StreamSubscription<LogRecord> _subscription;
@@ -31,6 +32,15 @@ class ConsoleLogSink implements LogMessageSink {
   }
 
   void _logMessage(LogRecord event) {
+    if (Platform.isAndroid) {
+      _logMessageColoredStyle(event);
+    }
+    else {
+      _logMessageDefaultStyle(event);
+    }
+  }
+  
+  void _logMessageColoredStyle(LogRecord event) {
     Object logLevelText;
 
     if (event.level == Level.FINE ||
@@ -49,5 +59,11 @@ class ConsoleLogSink implements LogMessageSink {
 
     print(
         '[${event.time} - ${event.loggerName} - ${logLevelText.toString()}] ${event.message ?? event.object?.toString() ?? ""}');
+  }
+
+  void _logMessageDefaultStyle(LogRecord event) {
+    String logLevelText = event.level.name;
+    print(
+        '[${event.time} - ${event.loggerName} - $logLevelText] ${event.message ?? event.object?.toString() ?? ""}');
   }
 }
